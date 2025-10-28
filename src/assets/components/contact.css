@@ -1,0 +1,113 @@
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-color: #0f172a;
+  --secondary-text: #334155;
+  --accent-color: #1d4ed8;
+  --input-bg: #fff;
+  --input-border: #cbd5e1;
+  --btn-bg: #1d4ed8;
+  --btn-bg-hover: #1e40af;
+}
+
+.dark {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #e5e5e5;
+  --secondary-text: #cbd5e1;
+  --accent-color: #38bdf8;
+  --input-bg: #1e293b;
+  --input-border: #475569;
+  --btn-bg: #0284c7;
+  --btn-bg-hover: #0ea5e9;
+}
+
+.contact-section {
+  background: var(--bg-color);
+  padding: 80px 18px;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-info {
+  text-align: left;
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid var(--input-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: var(--secondary-text);
+  margin: 12px 0;
+}
+
+.contact-info a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid var(--input-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form button {
+  background: var(--btn-bg);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: var(--btn-bg-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-section { padding: 60px 16px; }
+  .contact-container h2 { font-size: 1.8rem; margin-bottom: 30px; }
+}

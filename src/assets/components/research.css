@@ -1,0 +1,166 @@
+:root {
+  --bg-color: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  --text-color: #0f172a;
+  --secondary-text: #334155;
+  --accent-color: #0284c7;
+  --card-bg: white;
+  --card-border: rgba(2,132,199,0.1);
+  --btn-bg: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+  --btn-bg-hover: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  --btn-text: white;
+  --blob1-color: #0284c7;
+  --blob2-color: #0ea5e9;
+  --blob3-color: #38bdf8;
+}
+
+.dark {
+  --bg-color: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --text-color: #e5e5e5;
+  --secondary-text: #cbd5e1;
+  --accent-color: #38bdf8;
+  --card-bg: #1e293b;
+  --card-border: rgba(56,189,248,0.2);
+  --btn-bg: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+  --btn-bg-hover: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  --btn-text: white;
+  --blob1-color: #0284c7;
+  --blob2-color: #0ea5e9;
+  --blob3-color: #38bdf8;
+}
+
+/* Section */
+.research-section {
+  position: relative;
+  padding: 100px 20px;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+.research-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.research-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: var(--text-color);
+}
+
+/* Grid */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* Cards */
+.research-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(2,132,199,0.15);
+  border: 1px solid rgba(2,132,199,0.3);
+}
+
+/* Titles & Abstract */
+.research-card h3 {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.abstract {
+  color: var(--secondary-text);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Keyword Tags */
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.keyword-tag {
+  background: var(--accent-color);
+  color: white;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.keyword-tag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(2,132,199,0.3);
+}
+
+/* View Paper Button */
+.btn-view {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  align-self: center;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.btn-view:hover {
+  background: var(--btn-bg-hover);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(2,132,199,0.3);
+}
+
+/* Fade-in animation */
+.fade-in { opacity: 0; animation: fadeIn 1s forwards; }
+@keyframes fadeIn { to { opacity:1; } }
+
+/* Floating Blobs */
+.background-blobs .blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(100px);
+  animation: blobMove 25s ease-in-out infinite, blobRotate 60s linear infinite;
+  z-index: 1;
+}
+
+.background-blobs .blob1 { background: var(--blob1-color); top:10%; left:15%; width:300px; height:300px;}
+.background-blobs .blob2 { background: var(--blob2-color); top:40%; left:60%; width:400px; height:400px;}
+.background-blobs .blob3 { background: var(--blob3-color); top:70%; left:30%; width:250px; height:250px;}
+
+@keyframes blobMove {0%,100%{transform:translate(0,0);}50%{transform:translate(50px,-50px);}}
+@keyframes blobRotate {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+@media (max-width:768px){
+  .research-section{padding:80px 16px;}
+  .research-container h2{font-size:2rem;margin-bottom:40px;}
+  .research-grid{gap:20px;}
+}

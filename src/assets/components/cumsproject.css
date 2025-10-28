@@ -1,0 +1,144 @@
+/* =======================
+   CUMS Project Page Styles
+========================== */
+
+/* Section Background */
+.project-detail-section {
+  background: #f0f9ff;
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.project-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-detail-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Headings */
+.project-detail-container h2 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.project-detail-container h3 {
+  font-size: 1.4rem;
+  color: #0284c7;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+.project-detail-container p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Feature List */
+.project-detail-container ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.project-detail-container ul li {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 8px 14px;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.project-detail-container ul li:hover {
+  background: #0284c7;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Tools Tags */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tool-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.tool-tag:hover {
+  background: #0284c7;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Buttons */
+.project-buttons {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.project-buttons .btn-view {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.project-buttons .btn-view:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-detail-container {
+    padding: 30px 20px;
+  }
+
+  .project-detail-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-detail-container h3 {
+    font-size: 1.2rem;
+  }
+  
+  .project-detail-container ul li {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
