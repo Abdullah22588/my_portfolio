@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./certifications.css";
-
-// ✅ Correct way to import if images are in src/assets/images/certs/
 import mlsa from "../images/certs/mlsa.jpg";
 import aspire from "../images/certs/aspire.jpg";
 import nftp from "../images/certs/nftp.jpg";
