@@ -1,3 +1,4 @@
+// src/assets/components/Projects.jsx
 import React from "react";
 import "./projects.css";
 import { Link } from "react-router-dom";
@@ -7,59 +8,65 @@ export default function Projects() {
     {
       title: "Automata-Based Vulnerability Detection Tool",
       description:
-        "Developed a Python-based tool to detect SQL injection and hardcoded credentials using finite automata. Visualized vulnerabilities using Graphviz.",
+        "Developed a Python-based tool to detect SQL injection and hardcoded credentials using finite automata. Visualized vulnerabilities using Graphviz, demonstrating advanced code analysis techniques.",
       tools: ["Python", "AST", "Graphviz", "Automata"],
       link: "/automata-project",
-      isInternal: true,
+      isInternal: true, // Internal route for detailed project page
     },
     {
       title: "Centralized University Management System",
       description:
-        "Built a Windows Forms-based system for managing university operations such as student records, courses, and results.",
+        "Built a robust Windows Forms-based system for managing university operations such as student records, courses, and results using C# and a SQL backend for data integrity.",
       tools: ["C#", "SQL", "Windows Forms"],
       link: "/cums-project",
-      isInternal: true,
+      isInternal: true, // Internal route for detailed project page
     },
     {
-      title: "Personal Portfolio Website",
+      title: "Personal Portfolio Website (This Site)",
       description:
-        "Created a responsive portfolio website using React, HTML, CSS, and JavaScript to showcase projects and achievements.",
+        "Created a responsive, cross-browser compatible portfolio website using React with custom CSS for a modern aesthetic, showcasing web development proficiency.",
       tools: ["React", "HTML", "CSS", "JavaScript"],
-      link: "#",
-      isInternal: false,
+      link: "https://github.com/Abdullah22588/my_portfolio", // Example External link
+      isInternal: false, // External link (e.g., to GitHub or live demo)
     },
   ];
 
   return (
     <section id="projects" className="projects-section">
+      {}
       <div className="background-blobs">
         <div className="blob blob1"></div>
         <div className="blob blob2"></div>
-        <div className="blob blob3"></div>
       </div>
 
       <div className="projects-container">
-        <h2 className="fade-in">Projects</h2>
+        <h2 className="fade-in">Featured Projects</h2>
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <div className="project-card fade-in" key={index}>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="tools">
-                {project.tools.map((tool, i) => (
-                  <span key={i} className="tool-tag">{tool}</span>
-                ))}
+            <div className="project-card fade-in" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+              <div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
               </div>
+              
+              <div className="card-footer">
+                <div className="tools">
+                  {project.tools.map((tool, i) => (
+                    <span key={i} className="tool-tag">{tool}</span>
+                  ))}
+                </div>
 
-              {project.isInternal ? (
-                <Link to={project.link} className="btn-view">
-                  View Details →
-                </Link>
-              ) : (
-                <a href={project.link} className="btn-view" target="_blank" rel="noreferrer">
-                  View Details
-                </a>
-              )}
+                {/* Link/Button Logic */}
+                {project.isInternal ? (
+                  <Link to={project.link} className="btn-view">
+                    View Details →
+                  </Link>
+                ) : (
+                  <a href={project.link} className="btn-view" target="_blank" rel="noreferrer">
+                    View Code/Demo ↗
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>

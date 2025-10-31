@@ -1,6 +1,5 @@
-/* Light & Dark Variables */
 :root {
-  --nav-bg: rgba(10,10,10,0.85);
+  --nav-bg: rgba(10, 10, 10, 0.85);
   --nav-text: #0f172a;
   --nav-accent: #0284c7;
 }
@@ -11,6 +10,10 @@
   --nav-accent: #38bdf8;
 }
 
+html {
+  transition: background-color 0.4s, color 0.4s;
+}
+
 /* Header */
 .nav-header {
   position: sticky;
@@ -19,8 +22,14 @@
   z-index: 100;
   backdrop-filter: blur(12px);
   background: var(--nav-bg);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-  transition: background 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-header.scrolled {
+  background: rgba(10, 10, 20, 0.95);
+  padding: 6px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Container */
@@ -33,14 +42,13 @@
   padding: 14px 40px;
 }
 
-/* Brand + Toggle Wrapper */
+/* Brand + Toggle */
 .brand-wrapper {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* Brand */
 .brand {
   color: var(--nav-text);
   font-size: 1.5rem;
@@ -53,7 +61,6 @@
   transform: scale(1.05);
 }
 
-/* Theme Toggle */
 .theme-toggle {
   background: none;
   border: 2px solid var(--nav-accent);
@@ -75,6 +82,8 @@
   display: flex;
   gap: 28px;
   align-items: center;
+  opacity: 1;
+  transition: all 0.3s ease;
 }
 .nav-links span {
   color: var(--nav-text);
@@ -100,6 +109,14 @@
   color: var(--nav-accent);
 }
 .nav-links span:hover::after {
+  width: 100%;
+}
+
+/* Active Link */
+.active-link {
+  color: var(--nav-accent);
+}
+.active-link::after {
   width: 100%;
 }
 
@@ -152,11 +169,27 @@
     gap: 18px;
     padding: 25px 0;
     transform: translateY(-120%);
-    transition: transform 0.35s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
   }
   .nav-links.open {
     transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    animation: slideFadeIn 0.4s ease forwards;
   }
+
+  @keyframes slideFadeIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   .nav-links span {
     font-size: 1.1rem;
   }

@@ -1,13 +1,224 @@
-/* src/assets/components/automataProject.css */
-.automata-page { background:#fafafa; min-height:100vh; padding:60px 20px; display:flex; justify-content:center; }
-.automata-container { background:white; max-width:900px; width:100%; padding:40px 50px; border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,0.08); }
-.automata-container h1 { text-align:center; margin-bottom:10px; color:#222; }
-.subtitle { text-align:center; font-size:1.1rem; color:#666; margin-bottom:30px; }
-.automata-section { margin-bottom:35px; }
-.automata-section h2 { color:#333; margin-bottom:10px; border-left:4px solid #0078d4; padding-left:8px; }
-.automata-section p, .automata-section li { line-height:1.6; color:#555; }
-.automata-section ul { margin-left:20px; }
-.automata-buttons { text-align:center; margin-top:40px; }
-.btn { text-decoration:none; padding:10px 20px; border-radius:5px; margin-right:15px; font-weight:500; }
-.btn.primary { background-color:#0078d4; color:white; } .btn.primary:hover{ opacity:0.95; }
-.btn.secondary { background-color:#f1f1f1; color:#333; } .btn.secondary:hover{ opacity:0.95; }
+/* ==================================== */
+/* 🌟 Theme Variables (For consistency)*/
+/* ==================================== */
+:root {
+  --bg-color: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  --text-color: #0f172a;
+  --secondary-text: #334155;
+  --paragraph-text: #475569;
+  --accent-color: #0284c7;
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --card-border: rgba(255, 255, 255, 0.5);
+  --btn-bg: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+  --btn-bg-hover: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  --btn-text: white;
+  --shadow-color: rgba(2, 132, 199, 0.15);
+}
+
+.dark {
+  --bg-color: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --text-color: #f1f5f9;
+  --secondary-text: #cbd5e1;
+  --paragraph-text: #94a3b8;
+  --accent-color: #38bdf8;
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --card-border: rgba(56, 189, 248, 0.2);
+  --btn-bg: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  --btn-bg-hover: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+  --btn-text: #0f172a;
+  --shadow-color: rgba(56, 189, 248, 0.1);
+}
+
+/* =============================
+  PROJECT PAGE LAYOUT
+============================= */
+.automata-page {
+  background: var(--bg-color);
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.automata-container {
+  /* Using Glassmorphism for the main content block */
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 950px;
+  width: 100%;
+  padding: 40px 50px;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 40px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+/* Typography */
+.automata-container h1 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--paragraph-text);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+/* Section Styling */
+.automata-section {
+  margin-bottom: 45px;
+}
+
+.automata-section h2 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  /* Modern separator line */
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.automata-section p {
+  line-height: 1.7;
+  color: var(--secondary-text);
+  margin-bottom: 15px;
+}
+
+/* List Styling */
+.automata-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.automata-section li {
+  line-height: 1.7;
+  color: var(--secondary-text);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Bullet Point Icon (Using Unicode/Emoji for bullet) */
+.automata-section li::before {
+  content: '✓';
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Tool Tags */
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.tech-tag {
+  background: var(--accent-color);
+  color: var(--btn-text);
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 100px; /* Pill shape */
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Detail Card for Publication */
+.detail-card {
+  background: rgba(2, 132, 199, 0.05);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.dark .detail-card {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.detail-card p {
+  margin: 8px 0;
+  color: var(--text-color);
+}
+.detail-card strong {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+
+/* Buttons */
+.automata-buttons {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 100px;
+  margin: 0 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn.primary {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.btn.primary:hover {
+  background: var(--btn-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
+}
+
+.btn.secondary {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+}
+
+.btn.secondary:hover {
+  background-color: var(--card-bg);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .automata-container {
+    padding: 30px 20px;
+  }
+  .automata-container h1 {
+    font-size: 2rem;
+  }
+  .automata-section h2 {
+    font-size: 1.6rem;
+  }
+  .automata-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .btn {
+    margin: 0;
+    width: 100%;
+  }
+}

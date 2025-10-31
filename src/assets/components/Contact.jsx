@@ -8,31 +8,52 @@ export default function Contact() {
     email: "",
     message: "",
   });
+
   const handleChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thanks — form not connected yet.");
+    alert("Thanks for reaching out — form not connected yet!");
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
-        <h2>Contact Me</h2>
+        <h2>Let’s Get in Touch</h2>
+        <p className="contact-intro">
+          Have a project, research idea, or collaboration in mind? I’d love to hear from you!
+        </p>
+
         <div className="contact-grid">
+          {/* Contact Info */}
           <div className="contact-info">
             <p>
-               <strong>Email:</strong> abdullah.malokhani@gmail.com
+              <strong>Email:</strong>{" "}
+              <a href="mailto:abdullah.malokhani@gmail.com" className="highlight">
+                abdullah.malokhani@gmail.com
+              </a>
             </p>
             <p>
-               <strong>LinkedIn:</strong>{" "}
-              <a href="https://www.linkedin.com/in/abdullah-khan-49111826b/">
+              <strong>LinkedIn:</strong>{" "}
+              <a
+                href="https://www.linkedin.com/in/abdullah-khan-49111826b/"
+                target="_blank"
+                rel="noreferrer"
+                className="highlight"
+              >
                 linkedin.com/in/abdullah-khan-49111826b/
               </a>
             </p>
             <p>
-               <strong>GitHub:</strong>{" "}
-              <a href="https://www.github.com/Abdullah22588">
+              <strong>GitHub:</strong>{" "}
+              <a
+                href="https://www.github.com/Abdullah22588"
+                target="_blank"
+                rel="noreferrer"
+                className="highlight"
+              >
                 github.com/Abdullah22588
               </a>
             </p>
@@ -41,6 +62,7 @@ export default function Contact() {
             </p>
           </div>
 
+          {/* Contact Form */}
           <form onSubmit={handleSubmit} className="contact-form">
             <input
               name="name"

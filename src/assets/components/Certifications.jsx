@@ -63,7 +63,7 @@ export default function Certifications() {
   ];
 
   return (
-    <section id="certs" className="certifications-section">
+    <section id="certifications" className="certifications-section">
       <div className="certifications-container">
         <h2>Certifications & Programs</h2>
         <div className="cert-grid">
