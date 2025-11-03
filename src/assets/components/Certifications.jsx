@@ -7,7 +7,6 @@ import meta from "../images/certs/meta.jpg";
 import python from "../images/certs/python.jpg";
 import google from "../images/certs/googleessentials.jpg";
 
-
 export default function Certifications() {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -19,6 +18,8 @@ export default function Certifications() {
       issuer: "Microsoft Learn Student Program",
       year: "Ongoing",
       image: mlsa,
+      verifyLink:
+        "https://mvp.microsoft.com/en-US/studentambassadors/profile/cce452b6-52a6-48fd-bd5e-0ca27a0664b8",
     },
     {
       title: "Aspires Leadership Program Alumni",
@@ -27,6 +28,8 @@ export default function Certifications() {
       issuer: "Aspire Institute",
       year: "2025",
       image: aspire,
+      verifyLink:
+        "https://www.aspireleaders.org/program/aspire-leaders-program/",
     },
     {
       title: "National Freelance Training Program (NFTP)",
@@ -35,6 +38,7 @@ export default function Certifications() {
       issuer: "Punjab IT Board (PITB)",
       year: "2024",
       image: nftp,
+      verifyLink: "https://nftp.pitb.gov.pk/",
     },
     {
       title: "Meta Front-End Developer Professional Certificate",
@@ -43,6 +47,7 @@ export default function Certifications() {
       issuer: "Meta (Coursera)",
       year: "2025",
       image: meta,
+      verifyLink: "https://coursera.org/verify/professional-cert/I67CNA39XMA2",
     },
     {
       title: "Learn to Program: The Fundamentals (Python)",
@@ -51,6 +56,7 @@ export default function Certifications() {
       issuer: "University of Toronto (Coursera)",
       year: "2023",
       image: python,
+      verifyLink: "https://coursera.org/verify/Z2P2SURZSUDX",
     },
     {
       title: "Google AI Essentials",
@@ -59,6 +65,7 @@ export default function Certifications() {
       issuer: "Google",
       year: "2025",
       image: google,
+      verifyLink: "https://coursera.org/verify/specialization/3J3PM9E5GE7K",
     },
   ];
 
@@ -81,6 +88,14 @@ export default function Certifications() {
                 <span className="issuer">{cert.issuer}</span>
                 <span className="year">{cert.year}</span>
               </div>
+              <a
+                href={cert.verifyLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="verify-btn"
+              >
+                Verify
+              </a>
             </div>
           ))}
         </div>
@@ -89,7 +104,10 @@ export default function Certifications() {
           <div className="modal" onClick={() => setSelectedImage(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <img src={selectedImage} alt="Certificate Preview" />
-              <button className="close-btn" onClick={() => setSelectedImage(null)}>
+              <button
+                className="close-btn"
+                onClick={() => setSelectedImage(null)}
+              >
                 ✕
               </button>
             </div>
