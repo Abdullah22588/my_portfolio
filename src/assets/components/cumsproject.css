@@ -1,39 +1,6 @@
-/* ==================================== */
-/* 🌟 Theme Variables (For consistency)*/
-/* ==================================== */
-:root {
-  --bg-color: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  --text-color: #0f172a;
-  --secondary-text: #334155;
-  --paragraph-text: #475569;
-  --accent-color: #0284c7;
-  --card-bg: rgba(255, 255, 255, 0.4);
-  --card-border: rgba(255, 255, 255, 0.5);
-  --btn-bg: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
-  --btn-bg-hover: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-  --btn-text: white;
-  --shadow-color: rgba(2, 132, 199, 0.15);
-}
-
-.dark {
-  --bg-color: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --text-color: #f1f5f9;
-  --secondary-text: #cbd5e1;
-  --paragraph-text: #94a3b8;
-  --accent-color: #38bdf8;
-  --card-bg: rgba(30, 41, 59, 0.5);
-  --card-border: rgba(56, 189, 248, 0.2);
-  --btn-bg: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
-  --btn-bg-hover: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
-  --btn-text: #0f172a;
-  --shadow-color: rgba(56, 189, 248, 0.1);
-}
-
-/* =============================
-  PROJECT PAGE LAYOUT
-============================= */
+/* src/assets/components/cumsproject.css */
 .project-detail-section {
-  background: var(--bg-color);
+  background: var(--bg-primary);
   min-height: 100vh;
   padding: 80px 20px;
   display: flex;
@@ -42,24 +9,22 @@
 }
 
 .project-detail-container {
-  /* Glassmorphism for the main content block */
-  background: var(--card-bg);
+  background: var(--bg-secondary);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   max-width: 950px;
   width: 100%;
   padding: 40px 50px;
   border-radius: 20px;
-  border: 1px solid var(--card-border);
-  box-shadow: 0 10px 40px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
   transition: all 0.3s ease;
 }
 
-/* Typography */
 .project-detail-container h1 {
   text-align: center;
   margin-bottom: 8px;
-  color: var(--text-color);
+  color: var(--text-primary);
   font-size: 2.5rem;
   font-weight: 800;
 }
@@ -67,35 +32,32 @@
 .project-overview {
   text-align: center;
   font-size: 1.15rem;
-  color: var(--paragraph-text);
+  color: var(--text-secondary);
   margin-bottom: 40px;
   font-weight: 400;
 }
 
-/* Section Styling */
 .project-section {
   margin-bottom: 45px;
 }
 
 .project-section h2 {
-  color: var(--accent-color);
+  color: var(--primary);
   font-size: 1.8rem;
   font-weight: 700;
   margin-top: 25px;
   margin-bottom: 15px;
-  /* Modern separator line */
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--primary);
   padding-bottom: 5px;
   display: inline-block;
 }
 
 .project-detail-container p {
   line-height: 1.7;
-  color: var(--secondary-text);
+  color: var(--text-secondary);
   margin-bottom: 15px;
 }
 
-/* Feature List */
 .project-detail-container ul {
   list-style: none;
   padding: 0;
@@ -104,23 +66,21 @@
 
 .project-detail-container ul li {
   line-height: 1.7;
-  color: var(--secondary-text);
+  color: var(--text-secondary);
   margin-bottom: 10px;
   display: flex;
   align-items: flex-start;
   gap: 10px;
 }
 
-/* Bullet Point Icon (Using Unicode/Emoji for bullet) */
 .project-detail-container ul li::before {
   content: '✓';
-  color: var(--accent-color);
+  color: var(--primary);
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
-/* Tool Tags */
 .tools-list {
   display: flex;
   flex-wrap: wrap;
@@ -129,16 +89,15 @@
 }
 
 .tool-tag {
-  background: var(--accent-color);
-  color: var(--btn-text);
+  background: var(--primary);
+  color: white;
   font-size: 0.9rem;
   padding: 8px 16px;
-  border-radius: 100px; /* Pill shape */
+  border-radius: 100px;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
-/* Buttons */
 .project-buttons {
   text-align: center;
   margin-top: 50px;
@@ -156,26 +115,28 @@
 }
 
 .btn-view.primary {
-  background: var(--btn-bg);
-  color: var(--btn-text);
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-md);
 }
 
 .btn-view.primary:hover {
-  background: var(--btn-bg-hover);
+  background: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-view.secondary {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid var(--card-border);
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
 }
 
 .btn-view.secondary:hover {
-  background-color: var(--input-bg);
+  background-color: var(--bg-primary);
   transform: translateY(-2px);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 /* Responsive */
@@ -183,17 +144,21 @@
   .project-detail-container {
     padding: 30px 20px;
   }
+
   .project-detail-container h1 {
     font-size: 2rem;
   }
+
   .project-section h2 {
     font-size: 1.6rem;
   }
+
   .project-buttons {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
+
   .btn-view {
     margin: 0;
     width: 100%;

@@ -2,34 +2,10 @@
 import React from "react";
 import "./projects.css";
 import { Link } from "react-router-dom";
+import projectsData from "../../data/projectsData"; // ⬅ import data here
 
-export default function Projects() {
-  const projects = [
-    {
-      title: "Automata-Based Vulnerability Detection Tool",
-      description:
-        "Developed a Python-based tool to detect SQL injection and hardcoded credentials using finite automata. Visualized vulnerabilities using Graphviz, demonstrating advanced code analysis techniques.",
-      tools: ["Python", "AST", "Graphviz", "Automata"],
-      link: "/automata-project",
-      isInternal: true,
-    },
-    {
-      title: "Centralized University Management System",
-      description:
-        "Built a robust Windows Forms-based system for managing university operations such as student records, courses, and results using C# and a SQL backend for data integrity.",
-      tools: ["C#", "SQL", "Windows Forms"],
-      link: "/cums-project",
-      isInternal: true,
-    },
-    {
-      title: "Personal Portfolio Website (This Site)",
-      description:
-        "Created a responsive, cross-browser compatible portfolio website using React with custom CSS for a modern aesthetic, showcasing web development proficiency.",
-      tools: ["React", "HTML", "CSS", "JavaScript"],
-      link: "https://github.com/Abdullah22588/my_portfolio",
-      isInternal: false,
-    },
-  ];
+export default function Projects({ showAll = false }) {
+  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 3);
 
   return (
     <section id="projects" className="projects-section">
@@ -41,8 +17,9 @@ export default function Projects() {
 
       <div className="projects-container">
         <h2 className="fade-in">Featured Projects</h2>
+
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <div
               className="project-card fade-in"
               key={index}
@@ -80,6 +57,14 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {!showAll && (
+          <div className="view-all-container fade-in">
+            <Link to="/all-projects" className="btn-view-all">
+              View All Projects →
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

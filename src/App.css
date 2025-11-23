@@ -1,211 +1,61 @@
-/* 🧭 Modern Glass Navbar */
-.nav-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  backdrop-filter: blur(10px);
-  background: rgba(15, 15, 15, 0.8);
-  color: #fff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-  transition: background 0.3s ease;
-}
+/* This file seems to be used for global styles in the original setup, but I've moved global styles to index.css. 
+   I will keep this file empty or minimal if it's imported in App.jsx, or migrate specific app-root styles if needed. 
+   The original App.css had navbar styles, but Navbar.jsx imports navbar.css. 
+   I should probably clear this file to avoid conflicts if I'm moving styles to component specific files or index.css.
+   However, looking at the previous file view of App.css, it had navbar styles AND footer styles. 
+   I should probably move footer styles to a separate file or keep them here but updated.
+   Let's just clean it up to use variables.
+*/
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ✨ Brand Styling */
-.brand a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.brand a:hover {
-  color: #00e0ff;
-  transform: scale(1.05);
-}
-
-/* 🌍 Navigation Links */
-.nav-links {
-  display: flex;
-  gap: 28px;
-}
-
-.nav-links a {
-  color: #e5e5e5;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: #00e0ff;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #00e0ff;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* 🍔 Hamburger (Mobile Menu) */
-.nav-toggle {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: none;
-}
-
-.hamburger {
-  width: 26px;
-  height: 20px;
+.app-root {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-.hamburger span {
-  display: block;
-  height: 3px;
-  background: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+main {
+  flex: 1;
 }
 
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 6px);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -6px);
-}
-
-/* 📱 Mobile Styles */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    background: rgba(15, 15, 15, 0.95);
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    padding: 25px 0;
-    transform: translateY(-120%);
-    transition: transform 0.35s ease-in-out;
-  }
-
-  .nav-links.open {
-    transform: translateY(0);
-  }
-
-  .nav-links a {
-    font-size: 1.1rem;
-  }
-}
-
-/* 🖱️ Pointer for all clickable items */
-a,
-button {
-  cursor: pointer;
-}
-/* ===== Footer Styles ===== */
+/* Footer Styles - Keeping them here for now or moving to Footer.css if it exists. 
+   Let's assume Footer.jsx imports Footer.css or relies on this. 
+   I'll update these to use the new variables.
+*/
 .footer {
-  background: #0b132b;
-  color: #f8f9fa;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
+  padding: 3rem 1rem;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-content h3 {
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 .footer-content p {
-  font-size: 0.9rem;
-  color: #bbb;
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
 }
 
 .footer-icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .footer-icons a {
-  color: #f8f9fa;
-  font-size: 1.4rem;
-  transition: color 0.3s;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .footer-icons a:hover {
-  color: #00aaff;
-}
-/* Light Theme Variables */
-:root {
-  --bg-color: #f0f9ff;
-  --text-color: #0f172a;
-  --secondary-text: #475569;
-  --accent-color: #0284c7;
-  --btn-bg: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
-  --btn-text: #fff;
-  --nav-bg: rgba(10, 10, 10, 0.85);
-  --nav-text: #e5e5e5;
-  --nav-accent: #00e0ff;
-}
-
-/* Dark Theme Variables */
-.dark {
-  --bg-color: #0f172a;
-  --text-color: #f0f9ff;
-  --secondary-text: #cbd5e1;
-  --accent-color: #38bdf8;
-  --btn-bg: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
-  --btn-text: #fff;
-  --nav-bg: rgba(30, 30, 50, 0.9);
-  --nav-text: #f0f9ff;
-  --nav-accent: #38bdf8;
-}
-
-/* Apply globally */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: all 0.4s ease;
+  color: var(--primary);
+  transform: translateY(-3px);
 }

@@ -1,7 +1,7 @@
 // src/assets/components/Hero.jsx
 import React from "react";
 import "./hero.css";
-import profileImg from "../images/1760274157199.png";
+import profileImg from "../images/my-image.jpeg";
 
 export default function Hero() {
   // Smooth scroll function

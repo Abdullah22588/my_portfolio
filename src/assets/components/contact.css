@@ -1,34 +1,6 @@
-:root {
-  --bg-color: #f8fafc;
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --text-color: #0f172a;
-  --secondary-text: #334155;
-  --accent-color: #1d4ed8;
-  --input-bg: rgba(255, 255, 255, 0.85);
-  --input-border: #cbd5e1;
-  --btn-bg: #1d4ed8;
-  --btn-bg-hover: #1e40af;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-.dark {
-  --bg-color: #0f172a;
-  --card-bg: rgba(30, 41, 59, 0.6);
-  --text-color: #f1f5f9;
-  --secondary-text: #cbd5e1;
-  --accent-color: #38bdf8;
-  --input-bg: rgba(30, 41, 59, 0.85);
-  --input-border: #475569;
-  --btn-bg: #0284c7;
-  --btn-bg-hover: #0ea5e9;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-}
-
-/* =============================
-   CONTACT SECTION
-============================= */
+/* src/assets/components/contact.css */
 .contact-section {
-  background: var(--bg-color);
+  background: var(--bg-secondary);
   padding: 100px 20px;
   display: flex;
   justify-content: center;
@@ -45,7 +17,7 @@
 .contact-container h2 {
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--text-primary);
   margin-bottom: 50px;
   letter-spacing: 0.5px;
 }
@@ -57,81 +29,75 @@
   align-items: start;
 }
 
-/* =============================
-   CONTACT INFO CARD
-============================= */
 .contact-info {
   text-align: left;
-  background: var(--card-bg);
+  background: var(--bg-glass);
   padding: 28px;
   border-radius: 16px;
-  border: 1px solid var(--input-border);
-  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
   backdrop-filter: blur(12px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-info:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 40px var(--shadow-color);
+  box-shadow: var(--shadow-lg);
 }
 
 .contact-info p {
   font-size: 1rem;
-  color: var(--secondary-text);
+  color: var(--text-secondary);
   margin: 16px 0;
   line-height: 1.6;
 }
 
 .contact-info a {
-  color: var(--accent-color);
+  color: var(--primary);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .contact-info a:hover {
-  color: var(--btn-bg-hover);
+  color: var(--primary-hover);
 }
 
-/* =============================
-   CONTACT FORM
-============================= */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  background: var(--card-bg);
+  background: var(--bg-glass);
   padding: 30px;
   border-radius: 16px;
-  border: 1px solid var(--input-border);
-  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
   backdrop-filter: blur(12px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 40px var(--shadow-color);
+  box-shadow: var(--shadow-lg);
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 14px;
-  border: 1px solid var(--input-border);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   font-size: 1rem;
-  background: var(--input-bg);
-  color: var(--text-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
 }
 
 .contact-form textarea {
@@ -140,7 +106,7 @@
 }
 
 .contact-form button {
-  background: var(--btn-bg);
+  background: var(--primary);
   color: #fff;
   padding: 14px;
   font-size: 1rem;
@@ -152,13 +118,11 @@
 }
 
 .contact-form button:hover {
-  background: var(--btn-bg-hover);
+  background: var(--primary-hover);
   transform: translateY(-2px);
 }
 
-/* =============================
-   RESPONSIVE
-============================= */
+/* Responsive */
 @media (max-width: 768px) {
   .contact-section {
     padding: 70px 16px;
