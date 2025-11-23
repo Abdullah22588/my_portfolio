@@ -48,7 +48,7 @@ export default function Navbar() {
           }
         });
       },
-      { threshold: 0.5 }
+      { rootMargin: "-50% 0px -50% 0px" }
     );
     sections.forEach((section) => observer.observe(section));
     return () => sections.forEach((section) => observer.unobserve(section));

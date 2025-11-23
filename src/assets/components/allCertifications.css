@@ -1,0 +1,10 @@
+/* src/assets/components/allCertifications.css */
+.all-certifications-page {
+    background: var(--bg-primary);
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.all-certifications-page .certifications-section {
+    padding-top: 80px;
+}

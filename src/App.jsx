@@ -10,6 +10,8 @@ import Contact from "./assets/components/Contact";
 import AutomataProject from "./assets/components/AutomataProject";
 import CUMSProject from "./assets/components/CUMSProject"; // ✅ import CUMS project page
 import Certifications from "./assets/components/Certifications";
+import AllProjects from "./assets/components/AllProjects"; // ✅ Import AllProjects
+import AllCertifications from "./assets/components/AllCertifications"; // ✅ Import AllCertifications
 import Footer from "./assets/components/Footer";
 
 
@@ -25,25 +27,11 @@ export default function App() {
             path="/"
             element={
               <>
-                <section id="hero">
-                  <Hero />
-                </section>
-
-                <section id="projects">
-                  <Projects />
-                </section>
-
-                <section id="research">
-                  <Research />
-                </section>
-
-                <section id="certs">
-                  <Certifications />
-                </section>
-
-                <section id="contact">
-                  <Contact />
-                </section>
+                <Hero />
+                <Projects />
+                <Research />
+                <Certifications />
+                <Contact />
               </>
             }
           />
@@ -51,6 +39,8 @@ export default function App() {
           {/* Project detail pages */}
           <Route path="/automata-project" element={<AutomataProject />} />
           <Route path="/cums-project" element={<CUMSProject />} /> {/* ✅ CUMS route */}
+          <Route path="/all-projects" element={<AllProjects />} /> {/* ✅ All Projects route */}
+          <Route path="/all-certifications" element={<AllCertifications />} /> {/* ✅ All Certifications route */}
         </Routes>
       </main>
 
