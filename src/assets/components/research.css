@@ -38,6 +38,12 @@
   gap: 2rem;
 }
 
+@media (max-width: 768px) {
+  .research-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
 .research-card {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);

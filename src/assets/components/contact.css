@@ -29,6 +29,12 @@
   align-items: start;
 }
 
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
 .contact-info {
   text-align: left;
   background: var(--bg-glass);

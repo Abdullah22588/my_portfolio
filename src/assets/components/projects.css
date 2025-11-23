@@ -38,6 +38,12 @@
   gap: 2rem;
 }
 
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
 .project-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);

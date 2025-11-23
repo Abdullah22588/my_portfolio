@@ -334,6 +334,11 @@ html {
 /* 📱 Responsive Adjustments            */
 /* ==================================== */
 @media (max-width: 992px) {
+  .hero {
+    padding: 60px 16px;
+    /* Reduced padding */
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     /* Stack vertically */
@@ -350,6 +355,14 @@ html {
 
   .profile-card {
     margin: 0 auto;
+    width: 100%;
+    /* Allow shrinking */
+    max-width: 320px;
+    /* Max width constraint */
+    height: auto;
+    /* Auto height to maintain aspect ratio if needed, or keep fixed */
+    aspect-ratio: 1 / 1;
+    /* Ensure square */
     transform: rotateZ(0deg);
     /* No rotation on mobile*/
   }
@@ -360,5 +373,16 @@ html {
 
   .hero h2 {
     font-size: clamp(1rem, 3vw, 1.3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+  }
+
+  .profile-card {
+    max-width: 280px;
+    /* Smaller for very small screens */
   }
 }
