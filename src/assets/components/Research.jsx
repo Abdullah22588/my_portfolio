@@ -1,16 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./research.css";
+import researchData from "../../data/researchData";
 
-export default function Research() {
-  const papers = [
-    {
-      title: "Automata-Based Software Vulnerability Detection for Source Code",
-      abstract:
-        "A lightweight static analysis method identifying SQL injection and hardcoded credentials using deterministic finite automata over Python AST tokens.",
-      keywords: ["Automata", "Static Analysis", "Python AST", "Cybersecurity"],
-      link: "#",
-    }
-  ];
+export default function Research({ showAll = false }) {
+  const displayedPapers = showAll ? researchData : researchData.slice(0, 3);
 
   return (
     <section id="research" className="research-section">
@@ -23,7 +17,7 @@ export default function Research() {
       <div className="research-container">
         <h2 className="fade-in">Research Publications</h2>
         <div className="research-grid">
-          {papers.map((paper, index) => (
+          {displayedPapers.map((paper, index) => (
             <div className="research-card fade-in" key={index}>
               <h3>{paper.title}</h3>
               <p className="abstract">{paper.abstract}</p>
@@ -38,6 +32,14 @@ export default function Research() {
             </div>
           ))}
         </div>
+
+        {!showAll && (
+          <div className="view-all-container fade-in">
+            <Link to="/all-research" className="btn-view-all">
+              View All Research →
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

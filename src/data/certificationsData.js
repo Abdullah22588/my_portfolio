@@ -5,6 +5,7 @@ import nftp from "../assets/images/certs/nftp.jpg";
 import meta from "../assets/images/certs/meta.jpg";
 import python from "../assets/images/certs/python.jpg";
 import google from "../assets/images/certs/googleessentials.jpg";
+import aspireLetter from "../assets/images/certs/aspireLetter.jpg";
 
 const certificationsData = [
     {
@@ -26,6 +27,15 @@ const certificationsData = [
         image: aspire,
         verifyLink:
             "https://www.aspireleaders.org/program/aspire-leaders-program/",
+    },
+          {
+        title: "Aspire Institute Acknowledgement Letter",
+        description:
+            "Learned the fundamentals of AI, including machine learning, neural networks, and ethical AI practices.",
+        issuer: "Aspire Institute",
+        year: "2025",
+        image: aspireLetter,
+        verifyLink: "https://www.aspireleaders.org/program/aspire-leaders-program/",
     },
     {
         title: "National Freelance Training Program (NFTP)",
@@ -62,7 +72,7 @@ const certificationsData = [
         year: "2025",
         image: google,
         verifyLink: "https://coursera.org/verify/specialization/3J3PM9E5GE7K",
-    },
+    }
 ];
 
 export default certificationsData;

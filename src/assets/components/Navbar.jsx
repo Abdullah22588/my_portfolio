@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./navbar.css";
 
@@ -9,6 +9,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Load theme
   useEffect(() => {
@@ -37,28 +38,50 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Active section tracking
+  // Active section tracking & Route handling
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-50% 0px -50% 0px" }
-    );
-    sections.forEach((section) => observer.observe(section));
-    return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
+    if (location.pathname === "/all-projects") {
+      setActive("projects");
+    } else if (location.pathname === "/all-certifications") {
+      setActive("certifications");
+    } else if (location.pathname === "/all-research") {
+      setActive("research");
+    } else if (location.pathname === "/") {
+      // Only track sections on home page
+      const sections = document.querySelectorAll("section[id]");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActive(entry.target.id);
+            }
+          });
+        },
+        { rootMargin: "-50% 0px -50% 0px" }
+      );
+      sections.forEach((section) => observer.observe(section));
+      return () => sections.forEach((section) => observer.unobserve(section));
+    } else {
+      setActive(""); // Reset active state on other pages
+    }
+  }, [location.pathname]);
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+          setActive(id);
+        }
+      }, 300); // Wait for navigation
+    } else {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        setOpen(false);
+      }
     }
   };
 

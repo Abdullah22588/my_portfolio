@@ -2,6 +2,7 @@
 import React from "react";
 import "./hero.css";
 import profileImg from "../images/1760274157199.png";
+import resume from "../docs/resume.pdf"; // Import resume
 
 export default function Hero() {
   // Smooth scroll function
@@ -28,9 +29,7 @@ export default function Hero() {
             Software Developer | Aspire Leaders Alumnus | Researcher | MLSA
           </h2>
           <p className="fade-in-delay">
-            Passionate software developer, researcher, and aspiring tech innovator.
-            Hands-on experience in <strong>web development, AI, and secure coding</strong>.
-            Committed to building scalable and impactful software solutions.
+            I may not be the smartest, the most knowledgeable, or the most experienced in any particular field, but I am someone who is always eager to seize new opportunities and is driven by ambition. Thank you for visiting the Abdullah Portfolio, which highlights key moments from my academic and career journey. While I may not know who you are, I'm delighted that you've stopped by to explore my profiles and stories.
           </p>
           <div className="hero-buttons fade-in-delay-2">
             <button className="btn primary" onClick={() => scrollToSection("projects")}>
@@ -39,6 +38,9 @@ export default function Hero() {
             <button className="btn secondary" onClick={() => scrollToSection("contact")}>
               Contact Me
             </button>
+            <a href={resume} download="Abdullah_Resume.pdf" className="btn secondary">
+              Download CV
+            </a>
           </div>
         </div>
 

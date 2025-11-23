@@ -12,6 +12,7 @@ import CUMSProject from "./assets/components/CUMSProject"; // ✅ import CUMS pr
 import Certifications from "./assets/components/Certifications";
 import AllProjects from "./assets/components/AllProjects"; // ✅ Import AllProjects
 import AllCertifications from "./assets/components/AllCertifications"; // ✅ Import AllCertifications
+import AllResearch from "./assets/components/AllResearch"; // ✅ Import AllResearch
 import Footer from "./assets/components/Footer";
 
 
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/cums-project" element={<CUMSProject />} /> {/* ✅ CUMS route */}
           <Route path="/all-projects" element={<AllProjects />} /> {/* ✅ All Projects route */}
           <Route path="/all-certifications" element={<AllCertifications />} /> {/* ✅ All Certifications route */}
+          <Route path="/all-research" element={<AllResearch />} /> {/* ✅ All Research route */}
         </Routes>
       </main>
 
