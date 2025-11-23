@@ -100,6 +100,8 @@ html {
   background: linear-gradient(90deg, var(--accent-color), #0ea5e9, #38bdf8, var(--accent-color));
   background-size: 300% 300%;
   -webkit-background-clip: text;
+  background-clip: text;
+  /* Standard property */
   -webkit-text-fill-color: transparent;
   animation: gradientMove 4s ease infinite;
 }
@@ -186,32 +188,40 @@ html {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 20px;
+  padding: 30px;
   z-index: 2;
 }
 
 .profile-card {
-  width: 300px;
+  width: 320px;
+  height: 320px;
+  position: relative;
+  border-radius: 50%;
+  padding: 10px;
+  /* Space for the border/glow */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-card:hover {
-  transform: rotateZ(0deg) scale(1.05);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(2, 132, 199, 0.2);
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
-  max-width: 250px;
-  max-height: 250px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--accent-color);
-  /* Accent border */
-  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
-  /* Inner glow effect */
-  animation: float 4s ease-in-out infinite;
-  transition: border-color 0.4s ease;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: float 6s ease-in-out infinite;
 }
 
 /* Blobs - Simplified and less intrusive */
