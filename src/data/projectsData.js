@@ -10,11 +10,11 @@ const projectsData = [
     isInternal: true,
   },
   {
-    title: "Centralized University Management System",
+    title: "Weather App",
     description:
-      "Built a robust Windows Forms-based system for managing university operations such as student records, courses, and results using C# and a SQL backend for data integrity.",
-    tools: ["C#", "SQL", "Windows Forms"],
-    link: "/cums-project",
+      "A stunning, modern weather application built with React and Vite, featuring a premium Glassmorphism UI, dynamic Dark/Light themes**, and real-time weather data.",
+    tools: ["React.js", "Vite", "Tailwind CSS (Layouts)", "Custom CSS (Glassmorphism & Animations)", "React Context API (Theming)"],
+    link: "https://github.com/Abdullah22588/premium-weather-app",
     isInternal: true,
   },
   {
