@@ -2,7 +2,7 @@
 
 const projectsData = [
   {
-    title: "Automata-Based Vulnerability Detection",
+    title: "Automata-Based Software Vulnerability Detection",
     description:
       "Developed a Python-based tool to detect SQL injection and hardcoded credentials using finite automata. Visualized vulnerabilities using Graphviz, demonstrating advanced code analysis techniques.",
     tools: ["Python", "AST", "Graphviz", "Automata"],
@@ -12,7 +12,7 @@ const projectsData = [
   {
     title: "Weather App",
     description:
-      "A stunning, modern weather application built with React and Vite, featuring a premium Glassmorphism UI, dynamic Dark/Light themes**, and real-time weather data.",
+      "A stunning, modern weather application built with React and Vite, featuring a premium Glassmorphism UI, dynamic Dark/Light themes, and real-time weather data.",
     tools: ["React.js", "Vite", "Tailwind CSS (Layouts)", "Custom CSS (Glassmorphism & Animations)", "React Context API (Theming)"],
     link: "https://github.com/Abdullah22588/premium-weather-app",
     isInternal: true,
