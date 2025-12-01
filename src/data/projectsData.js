@@ -2,11 +2,11 @@
 
 const projectsData = [
   {
-    title: "Automata-Based Vulnerability Detection Tool",
+    title: "Automata-Based Vulnerability Detection",
     description:
       "Developed a Python-based tool to detect SQL injection and hardcoded credentials using finite automata. Visualized vulnerabilities using Graphviz, demonstrating advanced code analysis techniques.",
     tools: ["Python", "AST", "Graphviz", "Automata"],
-    link: "/automata-project",
+    link: "https://github.com/Abdullah22588/automata-based-software-vuln-detection",
     isInternal: true,
   },
   {
@@ -25,14 +25,7 @@ const projectsData = [
     link: "https://github.com/Abdullah22588/my_portfolio",
     isInternal: false,
   },
-  {
-    title: "AI-Powered Resume Analyzer",
-    description:
-      "An NLP-based tool that compares resumes with job descriptions and gives a match score using TensorFlow.",
-    tools: ["Python", "Flask", "TensorFlow", "NLP"],
-    link: "/ai-resume-analyzer",
-    isInternal: true,
-  },
+ 
 ];
 
 export default projectsData;
