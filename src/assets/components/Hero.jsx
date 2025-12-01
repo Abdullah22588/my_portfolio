@@ -23,7 +23,7 @@ export default function Hero() {
         {/* Hero Text */}
         <div className="hero-text">
           <h1 className="fade-in">
-            Hi, I’m <span>Abdullah</span>
+            Hi, I’m <span>Abdullah Khan</span>
           </h1>
           <h2 className="slide-up">
             Software Developer | Aspire Leaders Alumnus | Researcher | MLSA
